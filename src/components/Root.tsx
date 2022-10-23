@@ -1,6 +1,7 @@
-import { Box, Button, HStack, IconButton, Input, InputGroup, InputLeftElement, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, VStack } from "@chakra-ui/react";
+import { Box, Button, HStack, IconButton, Input, InputGroup, InputLeftElement, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure, VStack } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import { FaAirbnb, FaMoon, FaUserNinja, FaLock } from "react-icons/fa";
+import SocialLogin from "./socialLogin";
 
 export default function Root() {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -31,7 +32,10 @@ export default function Root() {
                   <Input variant={"filled"} placeholder="Password" />
                 </InputGroup>
               </VStack>
-              <Button mt={4} colorScheme={"red"} width={"100%"}>Log in</Button>
+              <Button mt={4} colorScheme={"red"} width={"100%"}>
+                Log in
+              </Button>
+              <SocialLogin />
             </ModalBody>
           </ModalContent>
         </Modal>
