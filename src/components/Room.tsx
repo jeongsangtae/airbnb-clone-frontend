@@ -2,7 +2,7 @@ import { Box, Button, Grid, HStack, Image, Text, useColorModeValue, VStack } fro
 import { FaRegHeart, FaStar } from "react-icons/fa";
 
 export default function Room() {
-  const gray = useColorModeValue("gray.600", "gray.300")
+  const gray = useColorModeValue("gray.600", "gray.300");
   return (
     <VStack alignItems={"flex-start"}>
         <Box position={"relative"} overflow={"hidden"} mb={3} rounded={"2xl"}>
@@ -18,13 +18,15 @@ export default function Room() {
             Ganggu-myeon, Yeongdeok-gun, 경상북도, 한국
           </Text>
           <HStack spacing={1}>
-            <FaStar size={15} />
+            <FaStar size={12} />
             <Text>5.0</Text>
           </HStack>
           </Grid>
-          <Text fontSize={"sm"} color="gray">Seoul, S. Korea</Text>
+          <Text fontSize={"sm"} color={gray}>
+            Seoul, S. Korea
+          </Text>
         </Box>
-        <Text fontSize={"sm"} color="gray">
+        <Text fontSize={"sm"} color={gray}>
           <Text as="b">₩351,567</Text>/박
         </Text>
       </VStack>
