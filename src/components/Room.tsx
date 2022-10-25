@@ -47,7 +47,6 @@ export default function Room({
           <Text display={"block"} as="b" noOfLines={1} fontSize="md">
             {name}
           </Text>
-
           <HStack spacing={1} alignItems="center">
             <FaStar size={12} />
             <Text fontSize={"sm"}>{rating}</Text>
@@ -58,7 +57,7 @@ export default function Room({
         </Text>
       </Box>
       <Text fontSize={"sm"} color={gray}>
-        <Text as="b">${price}</Text> / 박
+        <Text as="b">￦{price}</Text> / 박
       </Text>
     </VStack>
   );
