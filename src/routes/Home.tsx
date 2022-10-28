@@ -1,5 +1,6 @@
 import { Grid } from "@chakra-ui/react";
 import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { getRooms } from "../api";
 import Room from "../components/Room";
 import RoomSkeleton from "../components/RoomSkeleton";
@@ -8,6 +9,9 @@ import { IRoomList } from "../types";
 
 export default function Home() {
   const { isLoading, data } = useQuery<IRoomList[]>(["rooms"], getRooms);
+  useEffect(() => {
+    console.log('hello');
+  }, [])
   return (
     <Grid
       mt={10}
