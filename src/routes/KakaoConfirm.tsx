@@ -19,7 +19,7 @@ export default function KakaoConfirm() {
           status: "success",
           title: "Welcome!",
           position: "bottom-right",
-          description: "Happy to have you back!",
+          description: "Happy to have you back! Kakao!",
         });
         queryClient.refetchQueries(["me"]);
         navigate("/");

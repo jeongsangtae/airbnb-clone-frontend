@@ -19,7 +19,7 @@ export default function GithubConfirm() {
           status: "success",
           title: "Welcome!",
           position: "bottom-right",
-          description: "Happy to have you back!",
+          description: "Happy to have you back! Github!",
         });
         queryClient.refetchQueries(["me"]);
         navigate("/");
