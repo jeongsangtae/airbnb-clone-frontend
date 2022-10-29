@@ -76,4 +76,5 @@ export const usernameLogIn = ({ username, password }: IUsernameLoginVariables) =
       headers: {
         "X-CSRFToken": Cookie.get("csrftoken") || "",
       },
-    }).then(response => response.data);
+    }
+  );
