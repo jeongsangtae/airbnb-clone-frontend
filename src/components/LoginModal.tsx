@@ -35,6 +35,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
       reset();
     },
   });
+
   const onSubmit = ({ username, password }: IForm) => {
     mutation.mutate({ username, password });
   };
