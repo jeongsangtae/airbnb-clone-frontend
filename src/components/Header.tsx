@@ -33,11 +33,11 @@ export default function Header() {
         toast.update(toastId.current, {
           status: "success",
           title: "Done!",
-          description: "see you later!",
+          description: "See you later!",
         });
       }
     },
-  })
+  });
   const onLogOut = async () => {
     mutation.mutate();
   };
