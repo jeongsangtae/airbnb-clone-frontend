@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useUser from "../lib/useUser";
 
-export default function HostOnlyPage() {
-  const { isLoggedIn, userLoading } = useUser();
+export default function useHostOnlyPage() {
+  const { user, userLoading } = useUser();
   const navigate = useNavigate();
   useEffect(() => {
     if (!userLoading) {
-      if (!isLoggedIn) {
+      if (!user?.is_host) {
         navigate("/");
       }
     }
-  }, [userLoading, isLoggedIn, navigate]);
+  }, [userLoading, user, navigate]);
   return;
 }
