@@ -30,6 +30,7 @@ export default function GithubConfirm() {
       mutation.mutate(code);
     }
   };
+
   useEffect(() => {
     confirmLogin();
   }, []);
