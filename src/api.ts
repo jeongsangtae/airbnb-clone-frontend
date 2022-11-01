@@ -37,7 +37,7 @@ export const logOut = () =>
 
 export const githubLogIn = (code: string) =>
   instance.post(
-    `/users/github`,
+    `users/github`,
     { code },
     {
       headers: {
@@ -48,7 +48,7 @@ export const githubLogIn = (code: string) =>
 
 export const kakaoLogIn = (code: string) =>
   instance.post(
-    `/users/kakao`,
+    `users/kakao`,
     { code },
     {
       headers: {
@@ -70,7 +70,7 @@ export interface IUsernameLoginError {
 
 export const usernameLogIn = ({ username, password }: IUsernameLoginVariables) =>
   instance.post(
-    `/users/log-in`,
+    `users/log-in`,
     { username, password },
     {
       headers: {
@@ -93,7 +93,7 @@ interface ISignUpVariables {
 
 export const SignUp = ({ username, password, email, name, currency, gender, language }: ISignUpVariables) =>
   instance.post(
-    `/users/`,
+    `users/`,
     { username, password, email, name, currency, gender, language },
     {
       headers: {
@@ -134,4 +134,4 @@ export const uploadRoom = (variables: IUploadRoomVariables) =>
         "X-CSRFToken": Cookie.get("csrftoken") || "",
       },
     }
-  );
+  ).then(response => response.data);
