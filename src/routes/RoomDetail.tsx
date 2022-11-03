@@ -6,14 +6,21 @@ import 'react-calendar/dist/Calendar.css';
 import { getRoom, getRoomReviews } from "../api";
 import { IReview, IRoomDetail } from "../types";
 import { FaStar } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function RoomDetail() {
   const { roomPk } = useParams();
   const { isLoading, data } = useQuery<IRoomDetail>([`rooms`, roomPk], getRoom);
-  const { data: reviewsData, isLoading: isReviewsLoading } = useQuery<IReview[]>([`rooms`, roomPk, `reviews`], getRoomReviews);
-  const [dates, setDates] = useState<Date>();
-  console.log(dates);
+  const { data: reviewsData } = useQuery<IReview[]>([`rooms`, roomPk, `reviews`], getRoomReviews);
+  const [dates, setDates] = useState<Date[]>();
+  useEffect(() => {
+    if (dates) {
+      const [firstDate, secondDate] = dates;
+      const [chechIn] = firstDate.toJSON().split("T");
+      const [checkOut] = secondDate.toJSON().split("T");
+      console.log(chechIn, checkOut);
+    }
+  }, [dates]);
   return (
     <Box mt={10}
       px={{
