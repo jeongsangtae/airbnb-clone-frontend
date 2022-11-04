@@ -132,6 +132,7 @@ export default function RoomDetail() {
         </Box>
         <Box pt={10}>
           <Calendar
+            className="react-calendar"
             onChange={setDates}
             prev2Label={null}
             next2Label={null}
