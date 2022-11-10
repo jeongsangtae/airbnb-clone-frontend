@@ -6,7 +6,7 @@ import { formatDate } from "./lib/utils";
 const instance = axios.create({
   baseURL: process.env.NODE_ENV === "development"
     ? "http://127.0.0.1:8000/api/v1/"
-    : "https://airbnbclone-backend.onrender.com/api/v1",
+    : "https://backend.jeongsangtae.xyz/api/v1",
   withCredentials: true,
 });
 
