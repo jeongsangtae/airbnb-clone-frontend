@@ -4,7 +4,7 @@ import { FaGithubAlt, FaComment } from "react-icons/fa";
 export default function SocialLogin() {
   const kakaoParams = {
     client_id: "978f62f56936d066b4442cea0bee4ff5",
-    redirect_uri: "http://127.0.0.1:3000/social/kakao",
+    redirect_uri: "https://jeongsangtae.xyz/social/kakao",
     response_type: "code",
   };
   const params = new URLSearchParams(kakaoParams).toString();
