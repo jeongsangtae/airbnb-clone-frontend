@@ -90,6 +90,7 @@ export default function SignUpModal({ isOpen, onClose }: SignUpModalProps) {
               <InputLeftElement children={<Box color={"gray.500"}><FaLock /></Box>} />
               <Input
                 {...register("password", { required: true })}
+                type="password"
                 variant={"filled"}
                 placeholder="Password" />
             </InputGroup>
